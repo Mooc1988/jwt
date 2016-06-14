@@ -48,7 +48,7 @@ module.exports = function (opts) {
       this.state[opts.key] = user
       yield next
     } else {
-      // 针对过期token增加498 code
+      // 针对过期token增加408 code
       let code = err.name === 'TokenExpiredError' ? 408 : 401
       let msg = 'Invalid token' + (opts.debug ? ' - ' + err.message + '\n' : '\n')
       this.throw(code, msg)
